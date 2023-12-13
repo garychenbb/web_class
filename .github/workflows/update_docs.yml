@@ -1,4 +1,4 @@
-name: Update Master Docs on Push
+name: Update Master Docs on Push Test
 on:
   push:
     branches:
