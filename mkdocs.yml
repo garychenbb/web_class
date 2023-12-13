@@ -1,0 +1,9 @@
+site_name: Web
+site_url: https://github.com/garychenbb/web_class.git
+docs_dir: 'docs/'
+nav:
+  - 首頁: index.md
+  - 網頁刻板:
+    - web_deisgn/index.md
+  - vue:
+    - vue/index.md
