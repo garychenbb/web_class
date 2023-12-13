@@ -1,20 +1,20 @@
-# name: Update Master Docs on Push
-# on:
-#   push:
-#     branches:
-#       - main
-#     paths:
-#       - 'docs/**'
+name: Update Master Docs on Push
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
 
-# jobs:
-#   trigger_main_update:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Trigger main repo update
-#         run: |
-#           curl -X POST \
-#                -H "Accept: application/vnd.github+json" \
-#                -H "Authorization: token ${{ secrets.CALL_MAIN_DOCS_WORKFLOW }}" \
-#                -H "Content-Type: application/json" \
-#                --data '{"event_type": "update_child_docs"}' \
-#                https://api.github.com/repos/garychenbb/garychenbb.github.io/dispatches
+jobs:
+  trigger_main_update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger main repo update
+        run: |
+          curl -X POST \
+               -H "Accept: application/vnd.github+json" \
+               -H "Authorization: token ${{ secrets.CALL_MAIN_DOCS_WORKFLOW }}" \
+               -H "Content-Type: application/json" \
+               --data '{"event_type": "update_child_docs"}' \
+               https://api.github.com/repos/garychenbb/garychenbb.github.io/dispatches
