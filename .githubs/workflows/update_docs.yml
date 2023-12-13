@@ -3,7 +3,7 @@ name: Update Master Docs on Push
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'docs/**'
 
