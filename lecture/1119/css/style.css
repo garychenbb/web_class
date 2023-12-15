@@ -1,0 +1,72 @@
+:root {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    :root {
+        font-size: 14px;
+    }
+}
+
+
+
+
+.p-reletive {
+    position: relative;
+}
+
+.p-absolute {
+    position: absolute;
+}
+
+.p-fixed {
+    position: fixed;
+}
+
+.p-static {
+    position: static;
+}
+
+.p-sticky {
+    position: sticky;
+}
+
+.cube {
+    width: 10px;
+    height: 10px;
+}
+
+.cube:nth-child(odd) {
+    background-color: lightsalmon;
+}
+
+.cube:nth-child(even) {
+    background-color: lightseagreen;
+}
+
+.cube-50 {
+    /* width: 50px;
+    height: 50px; */
+    width: 2rem;
+    height: 2rem;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.gap-5 {
+    gap: 2.5rem;
+}
+
+.top-50 {
+    top: 50px;
+}
+
+.left-50 {
+    left: 50px;
+}

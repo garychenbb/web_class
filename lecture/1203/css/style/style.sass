@@ -1,0 +1,143 @@
+@font-face
+    
+    src: url("../assets/MaokenAssortedSans-Lite.woff") format("woff")
+    font-family: "MaokenAssortedSans"
+    
+    
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: "MaokenAssortedSans"
+    
+
+img
+    width: 100%
+    height: auto
+
+    
+@for $index from 1 through 12
+     .col-#{$index}
+        width: calc((100% / 12) * $index)
+
+
+body
+    background: url('../assets/background.png') center/auto auto repeat
+    animation: bg-move 30s linear infinite
+
+    // display: flex
+    // justify-content: center
+    // align-items: center
+
+    overflow: hidden
+
+
+
+
+.card
+    &-container
+        position: relative
+        width: 50%
+    &-form
+        position: absolute
+        inset: 0
+        padding: 35% 12% 0 15%
+        
+        &-head
+            display: flex
+            justify-content: space-between
+
+            .index
+                font-size: 34px
+                color: #706B67
+
+            .navigate
+                font-size: 24px
+                color: #CBCBCB
+
+        &-body
+            margin-bottom: 19px
+
+            .question
+                color: #706B67
+                font-size: 22px
+                margin: 30px 0 30px 0
+
+            .option-group
+                display: flex
+                flex-direction: column
+                justify-content: center
+                gap: 10px
+
+                &-item
+                    display: flex
+                    gap: 20px
+                    input
+                        // margin-right: 20px
+
+                    p
+                        color: #706B67
+                        font-size: 22px
+
+
+        &-footer
+            display: flex
+            gap: 20px
+            justify-content: center
+
+            .btn
+                color: white
+                font-size: 22px
+                border: none
+                border-radius: 999px
+                padding: 15px 38px
+
+                &-home
+                    background: #72665B
+                
+                &-next
+                    background: #F5A459
+
+
+.radio-btn
+    display: grid
+    place-items: center
+    svg
+        display: none
+        grid-column: 1/-1
+        grid-row: 1/-1
+        width: 42px
+        height: 25.2px
+        flex-shrink: 0
+
+    input[type="radio"]
+        appearance: none
+        grid-column: 1/-1
+        grid-row: 1/-1
+        width: 26px
+        height: 26px
+        border: 2px black solid
+
+        &:checked
+            & ~ svg
+                display: block 
+            
+
+
+@keyframes bg-move 
+    0% 
+        background-position: 0% 0%
+    
+
+    100% 
+        background-position: 1000px -1000px
+    
+
+
+@media screen and (max-width: 767px)
+    .card
+        &-container
+            // position: absolute
+            // left: 50%
+            // transform: translateX(-50%)
+            width: 125%

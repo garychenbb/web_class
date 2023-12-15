@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+        <!-- <link rel="stylesheet" href="./css/dialog.css" /> -->
+    </head>
+    <body>
+        <!-- ref : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog -->
+
+        <button id="open">click me to open dialog</button>
+
+        <div class="Wrapper">
+            <!-- 彈窗 -->
+            <dialog open>
+                <div class="dialog-head">
+                    <button id="close">X</button>
+                    <p class="title">登入或註冊</p>
+                </div>
+                <div class="dialog-body">
+                    <div class="login">
+                        <p class="login-info">Airbnb 歡迎你</p>
+                        <div class="login-input-container">
+                            <label class="login-input" for="account">
+                                <input
+                                    type="text"
+                                    placeholder="輸入帳號"
+                                    id="account"
+                                    name="account"
+                                />
+                            </label>
+                            <label class="login-input" for="password">
+                                <input
+                                    type="password"
+                                    placeholder="輸入帳號"
+                                    id="password"
+                                    name="password"
+                                />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="devider">或</div>
+                    <div class="alternate-login">
+                        <div class="option">
+                            <span class="icon"> </span>
+                            <p class="text">使用facebook登入</p>
+                        </div>
+                        <div class="option">
+                            <span class="icon"> </span>
+                            <p class="text">使用facebook登入</p>
+                        </div>
+                        <div class="option">
+                            <span class="icon"> </span>
+                            <p class="text">使用facebook登入</p>
+                        </div>
+                        <div class="option">
+                            <span class="icon"> </span>
+                            <p class="text">使用facebook登入</p>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+        </div>
+
+        <script>
+            const dialog = document.querySelector("dialog");
+            const btnOpen = document.querySelector("#open");
+            const btnClose = document.querySelector("#close");
+
+            // shop modal > showModal()
+            btnOpen.addEventListener("click", (event) => {
+                dialog.showModal();
+                document.body.style.overflow = "hidden";
+            });
+
+            // close > close()
+            btnClose.addEventListener("click", (event) => {
+                dialog.close();
+                document.body.style.overflow = "";
+            });
+        </script>
+    </body>
+</html>

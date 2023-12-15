@@ -1,0 +1,21 @@
+@font-face {
+    src: url("../assets/MaokenAssortedSans-Lite.woff") format("woff");
+    font-family: "MaokenAssortedSans";
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.Wrapper {
+    min-height: 100svh;
+}

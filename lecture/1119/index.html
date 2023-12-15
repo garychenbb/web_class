@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <section>
+            <h3>position</h3>
+            <ul>
+                <li><a href="#static">static</a></li>
+                <li><a href="#relative">relative</a></li>
+                <li><a href="#absolute">absolute</a></li>
+                <li><a href="#fixed">fixed</a></li>
+                <li><a href="#sticky">sticky</a></li>
+            </ul>
+            <div class="d-flex flex-col gap-5">
+                <div id="static">
+                    <h3>position : static</h3>
+                    <p>
+                        所有標籤預設的 position
+                        屬性，沒什麼太大用處，所以看過就好
+                    </p>
+                </div>
+                <div id="relative: {}">
+                    <h3>position : relative</h3>
+                    <p>
+                        以「自己原本顯示的位置為基準位置」來指定上下左右的偏移，且區塊原本的空間仍會保留不會消失。
+                    </p>
+                    <div>這個屬性值大多會用在：</div>
+                    <ol>
+                        <li>
+                            <b
+                                >設定絕對配置( position: absolute
+                                )的基準元素時</b
+                            >
+                        </li>
+                        <li>
+                            希望元素偏移重疊 or
+                            指定圖層上下順序且同時保留原本的空間時
+                        </li>
+                    </ol>
+
+                    <!-- demo -->
+                    <div class="p-absolute">
+                        <div class="cube cube-50"></div>
+                        <div class="cube cube-50"></div>
+                        <div class="cube cube-50 p-reletive top-50 left-50">
+                            我是abs
+                        </div>
+                        <div class="cube cube-50"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>units</h3>
+
+            <span>
+                <div class="cube cube-50"></div>
+                <div class="cube cube-50"></div>
+                <div class="cube cube-50"></div>
+                <div class="cube cube-50"></div>
+            </span>
+        </section>
+    </body>
+</html>

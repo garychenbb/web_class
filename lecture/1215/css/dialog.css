@@ -1,0 +1,152 @@
+:root {
+    --text-color-primary: #454545;
+    ---color-secondary: #88888888;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+dialog {
+    position: fixed;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    color: var(--text-color-primary);
+    width: min(100%, 500px);
+    border-radius: 8px;
+    border: 1px solid var(--text-color-primary);
+    /* filter: drop-shadow(4px 4px 16px rgba(0, 0, 0, 0.05)); */
+
+    &::backdrop {
+
+        backdrop-filter: blur(8px);
+    }
+}
+
+
+
+.dialog-head {
+    display: flex;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--text-color-primary);
+    padding: 1rem;
+
+    .title {
+        flex: 1;
+        text-align: center;
+    }
+
+
+    button {
+        appearance: none;
+        background: transparent;
+        border: none;
+    }
+}
+
+
+
+
+
+.dialog-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1.5rem 2rem;
+
+
+    .login {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .login-info {
+            font-weight: bolder;
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+        .login-input-container {
+            display: flex;
+            flex-direction: column;
+
+            .login-input {
+                display: flex;
+                border: 1px solid var(--text-color-primary);
+                padding: 1rem;
+
+                &:first-of-type {
+                    border-radius: 4px 4px 0 0;
+                    border-bottom: none;
+                }
+
+                &:last-of-type {
+                    border-radius: 0px 0px 4px 4px;
+                }
+
+                input {
+                    flex: 1;
+                    appearance: none;
+
+                    border: none;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .devider {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.75rem;
+
+        &:before,
+        &:after {
+            content: "";
+            height: 1px;
+            display: block;
+            flex: 1;
+            background: var(---color-secondary);
+        }
+
+    }
+
+
+    .alternate-login {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            border: 1px solid var(--text-color-primary);
+
+            .icon {
+                display: inline-block;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 999px;
+                background: blue;
+            }
+
+            .text {
+                flex: 1;
+                text-align: center;
+            }
+        }
+
+    }
+
+}

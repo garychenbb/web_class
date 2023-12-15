@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <!-- box model -->
+        <div class="container">
+            <div class="container-head">
+                <h3 class="title">box model</h3>
+                <div class="intro">
+                    <div>
+                        元素的 box model 可以用 box-sizing 去做設定，分作
+                        content-box 和 border-box
+                    </div>
+                    <div>左邊為 content-box，右邊 border-box</div>
+                    <div>兩個都設定 100px*100px 的方塊，且有 20px 的內兼具</div>
+                </div>
+            </div>
+            <div class="container-body">
+                <div class="d-flex items-center gap-1">
+                    <div
+                        class="box-model-demo content-box bg-red border-black border-5 border-solid"
+                    >
+                        <div class="bg-blue w-100 h-100"></div>
+                    </div>
+                    <div
+                        class="box-model-demo border-box bg-red border-black border-5 border-solid"
+                    >
+                        <div class="bg-blue w-100 h-100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="conatiner-footer">
+                <hr />
+            </div>
+        </div>
+
+        <!-- flex (auto-layout) -->
+        <div class="container-head">
+            <h3 class="title">display : flex</h3>
+        </div>
+        <div class="container-body d-flex flex-col gap-1">
+            <div>
+                <b>設定容器的Ｘ／Ｙ軸對齊方向</b>
+                <div class="d-flex flex-col gap-1">
+                    <ul>
+                        <li>justify-content : 針對Ｘ軸</li>
+                        <li>align-items : 針對Ｙ軸</li>
+                    </ul>
+                    <div class="d-flex justify-center">
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                    </div>
+
+                    <div
+                        class="d-flex bg-gray items-center justify-end"
+                        style="height: 200px"
+                    >
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <b>內容物的X／Y軸排列</b>
+                <ul>
+                    <li>flex-direction : row (Ｘ軸)</li>
+                    <li>flex-direction : column (Ｙ軸)</li>
+                </ul>
+                <div class="d-flex flex-col gap-1">
+                    <div>延Ｘ軸排列</div>
+                    <div class="d-flex flex-row">
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                    </div>
+
+                    <div>延Ｙ軸排列</div>
+                    <div class="d-flex flex-col">
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                        <div class="flex-box-ele"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-footer">
+            <hr />
+        </div>
+    </body>
+</html>
+`

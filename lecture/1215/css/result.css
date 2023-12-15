@@ -1,0 +1,31 @@
+.result-card {
+
+    .result-card-head {
+        display: flex;
+        font-size: 24px;
+        color: #706B67;
+
+
+        .text-content {
+            flex: 1;
+
+            .highlight {
+                font-size: 54px;
+                color: #FCBB55;
+            }
+        }
+
+        .img-content {
+            flex: 1
+        }
+    }
+
+    .result-card-body {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+
+    }
+
+}
