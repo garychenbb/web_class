@@ -4,14 +4,18 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="../assets/css/reset.css" />
+        <link rel="stylesheet" href="../assets/css/style.css" />
     </head>
     <body>
         <div class="background"></div>
         <div class="container">
             <div>
-                <img src="img/notebook.png" alt="">
+                <picture>
+                    <source media="(min-width: 768px)" srcset="./img/notebook.png">
+                    <source media="(max-width: 767px)" srcset="./img/mb_notebook.png">
+                    <img src="" alt=""> <!-- src 會自動帶入上面的 source -->
+                </picture>
             </div>
             <div class="notebook-context">
                 <div class="homepage_logo">
