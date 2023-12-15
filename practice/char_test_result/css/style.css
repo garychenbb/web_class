@@ -3,12 +3,14 @@
     font-family: "MaokenAssortedSans";
 }
 
+
 body {
     height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "MaokenAssortedSans";
 }
 
 body img {
@@ -48,7 +50,7 @@ body img {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 0.5rem; 
+    gap: 1rem; 
 }
 
 .homepage_logo {
@@ -95,4 +97,70 @@ body img {
     }
 }
 
+.btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+}
 
+.btn {
+    width: 7.5rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    font-family: "MaokenAssortedSans";
+    text-align: center;
+    color: white;
+    border-style: none;
+    background-color: #72665b;
+    border-radius: 2rem;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+.btn-next {
+    background-color: #f5a459;
+} 
+
+.container-head {
+    background-color: #f5a459;
+    display: flex;
+    flex-direction: row;
+}
+
+.pet-frame {
+    width: 8rem;
+}
+
+.container-head-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.result-question {
+    color: #706b67;
+    font-size: 1.6rem;
+    width: 80%;
+}
+
+.result-answer {
+    color: #fcbb55;
+    font-size: 3.5rem;
+    
+}
+
+.container-mid {
+    
+} 
+
+.pet_words {
+    font-size: 2.2rem;
+    color: #cc0066;
+    text-align: center;
+}
+
+.chart-content {
+    
+}
