@@ -1,0 +1,6 @@
+src : 原檔
+    router : 路由器
+    view : 頁面
+    components : 元件
+
+dist : 編譯後的檔案
