@@ -78,6 +78,8 @@ const navContent = [
 }
 
 .nav-item-group {
+    margin: 0;
+    padding: 0;
     flex: 1;
     display: flex;
     justify-content: space-around;
