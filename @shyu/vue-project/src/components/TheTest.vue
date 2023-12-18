@@ -34,6 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100svh;
     background: url(../assets/background.png) top left/ auto repeat;
 }
 

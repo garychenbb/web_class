@@ -9,6 +9,11 @@ const router = createRouter({
     routes: [
         {
             path: "/",
+            name: "home",
+            component: HomeView,
+        },
+        {
+            path: "/test",
             name: "test",
             component: TestView,
         },
