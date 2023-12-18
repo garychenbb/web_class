@@ -8,7 +8,7 @@ const navContent = [
         {
             type: "link",
             label: "CAT",
-            url: "#",
+            url: "/cat",
         },
         {
             type: "link",
