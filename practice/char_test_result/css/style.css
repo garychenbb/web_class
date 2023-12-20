@@ -161,17 +161,6 @@ body img {
     text-align: center;
 }
 
-.container-bottom {
-    display: flex;
-    width: 100%;
-    gap: 1rem;
-}
-
-.chart-content {
-    flex: 1;
-}
-
 canvas {
-    width: 100% !important;
-    height: auto;
+    width: 10rem;
 }
