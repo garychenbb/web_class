@@ -24,7 +24,7 @@ const navContent = [
     [
         {
             type: "img",
-            label: "/src/assets/logo.png",
+            label: "/src/stories/assets/logo.png",
             url: "/",
         },
     ],
