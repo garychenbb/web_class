@@ -1,6 +1,7 @@
 <script setup>
 defineProps({
     // 接口：接父層來的props
+    showLogin: Boolean,
 });
 
 const navContent = [
@@ -41,6 +42,12 @@ const navContent = [
         },
     ],
 ];
+
+const emit = defineEmits(["updateShowLogin"]); //接收父組件傳來的方法
+
+const handleClick = (showLogin) => {
+    emit("updateShowLogin", showLogin);
+};
 </script>
 
 <template>
@@ -48,7 +55,21 @@ const navContent = [
         <div class="nav-content">
             <ul v-for="(item, index) in navContent" class="nav-item-group">
                 <li v-for="item in item" :key="item.index" class="nav-item">
-                    <a :href="item.url">
+                    <a
+                        v-if="item.label == 'LOGIN'"
+                        :href="item.url"
+                        @click="handleClick(showLogin)"
+                    >
+                        <img
+                            v-if="item.type == 'img'"
+                            :src="item.label"
+                            class="nav-item-img"
+                        />
+                        <span v-else>
+                            {{ item.label }}
+                        </span>
+                    </a>
+                    <a v-else :href="item.url">
                         <img
                             v-if="item.type == 'img'"
                             :src="item.label"
