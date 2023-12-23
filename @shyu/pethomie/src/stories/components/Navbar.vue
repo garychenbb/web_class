@@ -43,8 +43,9 @@ const navContent = [
     ],
 ];
 
-const emit = defineEmits(["updateShowLogin"]); //接收父組件傳來的方法
+const emit = defineEmits(["updateShowLogin"]); //接收父組件傳來的 function
 
+// 處理clicｋ事件 => 呼叫父組件傳來的 function
 const handleClick = (showLogin) => {
     emit("updateShowLogin", showLogin);
 };

@@ -1,9 +1,8 @@
 <script setup>
-import { ref } from "vue";
 import Navbar from "../components/Navbar.vue";
 import Login from "../components/Login.vue";
 
-let showLogin = false;
+let showLogin = true;
 
 const updateShowLogin = (isShow) => {
     isShow ? (showLogin = false) : (showLogin = true);
