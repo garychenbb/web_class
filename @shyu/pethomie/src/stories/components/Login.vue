@@ -4,8 +4,12 @@ defineProps({
     showLogin: Boolean,
 });
 
-const login = {
-    active: "signUp",
+// console.log(props.showLogin);
+const emit = defineEmits(["updateShowLogin"]); //接收父組件傳來的 function
+
+// 處理clicｋ事件 => 呼叫父組件傳來的 function
+const handleClick = (showLogin) => {
+    emit("updateShowLogin", showLogin);
 };
 </script>
 
@@ -27,6 +31,7 @@ const login = {
                 <div>option</div>
                 <div>option</div>
                 <div>option</div>
+                <div @click="handleClick(showLogin)">{{ showLogin }}</div>
             </div>
         </div>
     </dialog>
@@ -101,14 +106,6 @@ const login = {
 
             &--signup:not(.active)::after, &--login:not(.active)::after
                 background: var(--theme-primary)
-
-
-
-
-
-
-
-
 
 
 

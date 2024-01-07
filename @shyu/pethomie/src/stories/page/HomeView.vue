@@ -2,7 +2,7 @@
 import Navbar from "../components/Navbar.vue";
 import Login from "../components/Login.vue";
 
-let showLogin = true;
+let showLogin = false;
 
 const updateShowLogin = (isShow) => {
     isShow ? (showLogin = false) : (showLogin = true);
@@ -15,5 +15,5 @@ const updateShowLogin = (isShow) => {
     <!-- routerView -->
     <RouterView></RouterView>
 
-    <Login :showLogin="showLogin"></Login>
+    <Login :showLogin="showLogin" @updateShowLogin="updateShowLogin"></Login>
 </template>
