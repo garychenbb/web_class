@@ -9,7 +9,7 @@ const navbarContent = [
     {
         type: "link",
         label: "DOG",
-        url: "#",
+        url: "/dog",
     },
     {
         type: "link",
@@ -24,7 +24,7 @@ const navbarContent = [
     {
         type: "link",
         label: "寵物測驗",
-        url: "#",
+        url: "/petchartest",
     },
     {
         type: "link",
