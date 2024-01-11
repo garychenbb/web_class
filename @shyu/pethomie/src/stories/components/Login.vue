@@ -4,7 +4,6 @@ defineProps({
     showLogin: Boolean,
 });
 
-// console.log(props.showLogin);
 const emit = defineEmits(["updateShowLogin"]); //接收父組件傳來的 function
 
 // 處理clicｋ事件 => 呼叫父組件傳來的 function
@@ -14,30 +13,44 @@ const handleClick = (showLogin) => {
 </script>
 
 <template>
-    <dialog :open="showLogin" class="login">
-        <!-- header -->
-        <div class="login-header">
-            <div class="login-header-tab login-header-tab--signup">
-                <div class="login-header-tab-title">註冊</div>
-            </div>
-            <div class="login-header-tab login-header-tab--login active">
-                <div class="login-header-tab-title">登入</div>
-            </div>
+    <Transition name="fade">
+        <div v-if="showLogin" @click="handleClick(showLogin)" class="backdrop">
+            {{ showLogin }}
         </div>
+    </Transition>
 
-        <!-- body -->
-        <div class="login-body">
-            <div class="login-wrapper">
-                <div>option</div>
-                <div>option</div>
-                <div>option</div>
-                <div @click="handleClick(showLogin)">{{ showLogin }}</div>
+    <Transition name="slide-in">
+        <dialog v-if="showLogin" class="login">
+            <!-- header -->
+            <div class="login-header">
+                <div class="login-header-tab login-header-tab--signup">
+                    <div
+                        class="login-header-tab-title"
+                        @click="handleClick(showLogin)"
+                    >
+                        註冊
+                    </div>
+                </div>
+                <div class="login-header-tab login-header-tab--login active">
+                    <div class="login-header-tab-title">登入</div>
+                </div>
             </div>
-        </div>
-    </dialog>
+
+            <!-- body -->
+            <div class="login-body">
+                <div class="login-wrapper">
+                    <div>option</div>
+                    <div>option</div>
+                    <div>option</div>
+                    <div @click="handleClick(showLogin)">{{ showLogin }}</div>
+                </div>
+            </div>
+        </dialog>
+    </Transition>
 </template>
 
 <style lang="sass" scoped>
+
 .login
     --theme-primary: #454545
     --theme-secondary: #ffffff
@@ -118,9 +131,43 @@ const handleClick = (showLogin) => {
     padding: 2rem
 
 
+
+
 @media screen and (max-width: 768px)
     .login
         width: 100%
         height: 100%
         border-radius: 0px
+
+.backdrop
+    position: fixed
+    top: 0
+    left: 0
+    width: 100svw
+    height: 100svh
+    background: rgba(0, 0, 0, 0.8)
+
+
+.slide-in-enter-active,
+.slide-in-leave-active,
+.fade-enter-active,
+.fade-leave-active
+    transition: all 0.5s ease-in-out
+
+.slide-in-enter-to,
+.slide-in-leave-from
+    opacity: 1
+    top: 50%
+    transform: translateY(-50%)
+
+
+.slide-in-enter-from,
+.slide-in-leave-to
+    opacity: 0
+    top: 50%
+    transform: translateY(0%)
+
+.fade-enter-from,
+.fade-leave-to
+    opacity: 0
 </style>
