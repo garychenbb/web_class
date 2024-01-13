@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from "vue";
+
 defineProps({
     // 接口：接父層來的props
     showLogin: Boolean,
@@ -9,6 +11,12 @@ const emit = defineEmits(["updateShowLogin"]); //接收父組件傳來的 functi
 // 處理clicｋ事件 => 呼叫父組件傳來的 function
 const handleClick = (showLogin) => {
     emit("updateShowLogin", showLogin);
+};
+
+const activeTab = ref("login");
+
+const swichativeTab = () => {
+    console.log("success");
 };
 </script>
 
@@ -23,21 +31,26 @@ const handleClick = (showLogin) => {
         <dialog v-if="showLogin" class="login">
             <!-- header -->
             <div class="login-header">
-                <div class="login-header-tab login-header-tab--signup">
-                    <div
-                        class="login-header-tab-title"
-                        @click="handleClick(showLogin)"
-                    >
-                        註冊
-                    </div>
+                <div
+                    class="login-header-tab login-header-tab--signup"
+                    :class="{ active: activeTab === 'signin' }"
+                    @click="activeTab = 'signin'"
+                >
+                    <div class="login-header-tab-title">註冊</div>
                 </div>
-                <div class="login-header-tab login-header-tab--login active">
+                <div
+                    class="login-header-tab login-header-tab--login"
+                    :class="{ active: activeTab === 'login' }"
+                    @click="activeTab = 'login'"
+                >
                     <div class="login-header-tab-title">登入</div>
                 </div>
             </div>
 
             <!-- body -->
             <div class="login-body">
+                {{ activeTab }}
+
                 <div class="login-wrapper">
                     <div>option</div>
                     <div>option</div>
@@ -126,10 +139,8 @@ const handleClick = (showLogin) => {
 
 .login-body
     overflow: hidden
-
     flex: 1
     padding: 2rem
-
 
 
 

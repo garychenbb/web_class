@@ -13,9 +13,9 @@ const updateShowLogin = (isShow) => {
 
 <template>
     <Navbar :showLogin="showLogin" @updateShowLogin="updateShowLogin"></Navbar>
-    <div>{{ showLogin }}</div>
-    <Login :showLogin="showLogin" @updateShowLogin="updateShowLogin"></Login>
 
     <!-- routerView -->
     <RouterView></RouterView>
+
+    <Login :showLogin="showLogin" @updateShowLogin="updateShowLogin"></Login>
 </template>
