@@ -56,9 +56,9 @@ const handleClick = (showLogin) => {
         <div class="nav-content">
             <ul v-for="(item, index) in navContent" class="nav-item-group">
                 <li v-for="item in item" :key="item.index" class="nav-item">
-                    <a
+                    <RouterLink
                         v-if="item.label == 'LOGIN'"
-                        :href="item.url"
+                        :to="item.url"
                         @click="handleClick(showLogin)"
                     >
                         <img
@@ -69,8 +69,8 @@ const handleClick = (showLogin) => {
                         <span v-else>
                             {{ item.label }}
                         </span>
-                    </a>
-                    <a v-else :href="item.url">
+                    </RouterLink>
+                    <RouterLink v-else :to="item.url">
                         <img
                             v-if="item.type == 'img'"
                             :src="item.label"
@@ -79,7 +79,7 @@ const handleClick = (showLogin) => {
                         <span v-else>
                             {{ item.label }}
                         </span>
-                    </a>
+                    </RouterLink>
                 </li>
             </ul>
         </div>
