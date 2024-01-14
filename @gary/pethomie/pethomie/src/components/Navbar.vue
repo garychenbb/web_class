@@ -9,6 +9,7 @@ defineProps({
 const emit = defineEmits(["showLogin"])
 
 function clickLogin(isShow) {
+    console.log("sss");
     emit("showLogin", isShow);
 }
 
@@ -48,7 +49,7 @@ const navbarContent = [
     {
         type: "link",
         label: "LOGIN",
-        url: "/tmp",
+        url: "/",
     },
 ]
 
@@ -56,17 +57,28 @@ const navbarContent = [
 
 
 <template>
+    {{ isShowLogin }}
     <div class="navbar-background">
         <div class="navbar-content">
             <!-- 每一個物件 -->
-            <RouterLink class="navbar-item" v-for="(value, index) in navbarContent" :to="value.url" @click="clickLogin(isShowLogin)">  
-                <div class="navbar-logo" v-if="value.type == 'img'">
-                    <img :src="value.label" >
+            <div  v-for="(value, index) in navbarContent">
+            
+                <div v-if="value.label == 'LOGIN'" @click="clickLogin(isShowLogin)">
+                    <div>
+                        {{ value.label }}
+                    </div>
                 </div>
-                <div v-else>
-                    {{ value.label }}
-                </div>
-            </RouterLink>
+
+                <RouterLink v-else class="navbar-item" :to="value.url">  
+                
+                    <div class="navbar-logo" v-if="value.type == 'img'">
+                        <img :src="value.label" >
+                    </div>
+                    <div v-else>
+                        {{ value.label }}
+                    </div>
+                </RouterLink>
+            </div>
         </div>
     </div>
 </template>

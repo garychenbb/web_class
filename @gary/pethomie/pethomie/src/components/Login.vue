@@ -1,5 +1,5 @@
 <script setup>
-
+import { ref } from "vue";
 // Variables
 defineProps({
     isShowLogin: Boolean,
@@ -12,6 +12,7 @@ function clickLogin(isShow) {
     emit("showLogin", isShow);
 }
 
+const activeTab = ref("sign-up");
 </script>
 <template>
     <!-- <dialog open class="container"> -->
@@ -23,25 +24,31 @@ function clickLogin(isShow) {
     <Transition name="login-transition">
         <dialog v-if="isShowLogin" class="container">
             <div class="login-head">
-                <div class="container-head-tab sign-up">
+                <div class="container-head-tab sign-up" 
+                :class="{ active: activeTab == 'sign-up'}"
+                @click="activeTab = 'sign-up'">
                     <div class="container-head-tab-background"></div>
                     註冊
                 </div>
-                <div class="container-head-tab login active">
+                <div class="container-head-tab login"
+                :class="{ active: activeTab == 'login' }"
+                @click="activeTab = 'login'">
                     <div class="container-head-tab-background"></div>
                     登入
                 </div>
             </div>
     
             <div class="third-party-login-container">
-                <div class="close">x</div>
-                <div class="third-party-login">
-                    <div class="third-party-login-icon"></div>
-                    <div class="third-party-login-text">Facebook</div>
-                </div>
-                <div class="third-party-login">
-                    <div class="third-party-login-icon"></div>
-                    <div class="third-party-login-text">Google</div>
+                <!-- <div class="close">x</div> -->
+                <div v-if="activeTab == 'sign-up'">
+                    <div class="third-party-login">
+                        <div class="third-party-login-icon"></div>
+                        <div class="third-party-login-text">Facebook</div>
+                    </div>
+                    <div class="third-party-login">
+                        <div class="third-party-login-icon"></div>
+                        <div class="third-party-login-text">Google</div>
+                    </div>
                 </div>
             </div>
         </dialog>
@@ -68,6 +75,7 @@ function clickLogin(isShow) {
     color: white;
     background-color: #454545;
     position: relative;
+    cursor: pointer;
 }
 
 .container-head-tab-background {
