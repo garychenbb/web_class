@@ -1,34 +1,63 @@
 <script setup>
+
+// Variables
+defineProps({
+    isShowLogin: Boolean,
+})
+
+// Functions
+const emit = defineEmits(["showLogin"])
+
+function clickLogin(isShow) {
+    emit("showLogin", isShow);
+}
+
 </script>
 <template>
     <!-- <dialog open class="container"> -->
-    <dialog class="container">
-        <div class="login-head">
-            <div class="container-head-tab sign-up">
-                <div class="container-head-tab-background"></div>
-                註冊
-            </div>
-            <div class="container-head-tab login active">
-                <div class="container-head-tab-background"></div>
-                登入
-            </div>
+    <Transition name="backdrop-transition">
+        <div class="backdrop" v-if="isShowLogin" @click="clickLogin(isShowLogin)">
         </div>
+    </Transition>
 
-        <div class="third-party-login-container">
-            <div class="close">x</div>
-            <div class="third-party-login">
-                <div class="third-party-login-icon"></div>
-                <div class="third-party-login-text">Facebook</div>
+    <Transition name="login-transition">
+        <dialog v-if="isShowLogin" class="container">
+            <div class="login-head">
+                <div class="container-head-tab sign-up">
+                    <div class="container-head-tab-background"></div>
+                    註冊
+                </div>
+                <div class="container-head-tab login active">
+                    <div class="container-head-tab-background"></div>
+                    登入
+                </div>
             </div>
-            <div class="third-party-login">
-                <div class="third-party-login-icon"></div>
-                <div class="third-party-login-text">Google</div>
+    
+            <div class="third-party-login-container">
+                <div class="close">x</div>
+                <div class="third-party-login">
+                    <div class="third-party-login-icon"></div>
+                    <div class="third-party-login-text">Facebook</div>
+                </div>
+                <div class="third-party-login">
+                    <div class="third-party-login-icon"></div>
+                    <div class="third-party-login-text">Google</div>
+                </div>
             </div>
-        </div>
-    </dialog>
+        </dialog>
+    </Transition> 
 </template>
 
 <style scoped>
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25)
+}
 
 .container-head-tab {
     display: flex;
@@ -85,15 +114,15 @@
     background-color: yellow;
     position: fixed;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30rem;
-    height: 40rem;
-    border: 3px;
+    transform: translate(0, -50%); /*垂直置中*/
+    width: 20rem;
+    height: 20rem;
+    border: 2px;
     border-color: black;
     border-style: solid;
     border-radius: 2%;
     overflow: hidden;
+    display: block;
 }
 
 .login::backdrop {
@@ -141,9 +170,42 @@
     flex-grow: 1; /*填充剩下空間的多少比例寬度*/
 }
 
-.container {
-    /* background-color: green; */
-    height: 50rem;
+
+.login-transition-enter-active,
+.login-transition-leave-active {
+    transition: all 0.5s ease-in-out;
 }
+
+/* 還沒出現 */
+.login-transition-enter-from,
+.login-transition-leave-to {
+    opacity: 0;
+    top: 100%
+}
+
+/* 準備消失 */
+.login-transition-enter-to,
+.login-transition-leave-from {
+    opacity: 1;
+    top: 50%
+}
+
+.backdrop-transition-enter-active,
+.backdrop-transition-leave-active {
+    transition: all 0.5s ease-in-out;
+}
+
+/* 還沒出現 */
+.backdrop-transition-enter-from,
+.backdrop-transition-leave-to {
+    opacity: 0;
+}
+
+/* 準備消失 */
+.backdrop-transition-enter-to,
+.backdrop-transition-leave-from {
+    opacity: 1;
+}
+
 
 </style>

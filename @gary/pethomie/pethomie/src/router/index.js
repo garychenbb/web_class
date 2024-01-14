@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HelloPethomieView from '../page/HelloPethomieView.vue'
 import CatView from '../page/CatView.vue'
 import DogView from '../page/DogView.vue'
-import PetCharTestView from '../page/PetCharTestView.vue'
+import PetCharTestHomeView from '../page/PetCharTestHomeView.vue'
+import PetCharTestContentView from '../page/PetCharTestContentView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,9 +25,16 @@ const router = createRouter({
       component: DogView
     },
     {
-      path: '/petchartest',
-      name: 'petchartest',
-      component: PetCharTestView
+      path: '/petchartesthome',
+      name: 'petchartesthome',
+      component: PetCharTestHomeView,
+      children: [
+        {
+          path: '/petchartestcontent',
+          name: 'petchartestcontent',
+          component: PetCharTestContentView,
+        },
+      ]
     }
     // {
     //   path: '/about',

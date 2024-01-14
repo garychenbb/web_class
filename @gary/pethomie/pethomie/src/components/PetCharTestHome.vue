@@ -18,7 +18,7 @@
                 <div class="homepage_image">
                     <img src="../assets/petchartest/homepage_image.png" alt="" />
                 </div>
-                <button class="start-btn">START</button>
+                <button class="start-btn" href="/pet">START</button>
             </div>
         </div>
 </template>

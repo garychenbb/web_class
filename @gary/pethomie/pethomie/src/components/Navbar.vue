@@ -1,5 +1,19 @@
 <script setup>
 
+// Variables
+defineProps({
+    isShowLogin: Boolean,
+})
+
+// Functions
+const emit = defineEmits(["showLogin"])
+
+function clickLogin(isShow) {
+    emit("showLogin", isShow);
+}
+
+
+
 const navbarContent = [
     {
         type: "link",
@@ -14,7 +28,7 @@ const navbarContent = [
     {
         type: "link",
         label: "寵物知識",
-        url: "#",
+        url: "/tmp",
     },
     {
         type: "img",
@@ -24,34 +38,35 @@ const navbarContent = [
     {
         type: "link",
         label: "寵物測驗",
-        url: "/petchartest",
+        url: "/petchartesthome",
     },
     {
         type: "link",
         label: "SHOP",
-        url: "#",
+        url: "/tmp",
     },
     {
         type: "link",
         label: "LOGIN",
-        url: "#",
+        url: "/tmp",
     },
 ]
 
 </script>
 
+
 <template>
     <div class="navbar-background">
         <div class="navbar-content">
             <!-- 每一個物件 -->
-            <a class="navbar-item" v-for="(value, index) in navbarContent" :href="value.url">  
+            <RouterLink class="navbar-item" v-for="(value, index) in navbarContent" :to="value.url" @click="clickLogin(isShowLogin)">  
                 <div class="navbar-logo" v-if="value.type == 'img'">
                     <img :src="value.label" >
                 </div>
                 <div v-else>
                     {{ value.label }}
                 </div>
-            </a>
+            </RouterLink>
         </div>
     </div>
 </template>
@@ -88,5 +103,10 @@ const navbarContent = [
     width: 5rem;
     top: 1rem;
 }
+
+.router-link-active {
+    color: red !important;
+}
+
 
 </style>
