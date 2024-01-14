@@ -14,12 +14,12 @@ const navContent = [
         {
             type: "link",
             label: "DOG",
-            url: "#",
+            url: "/dog",
         },
         {
             type: "link",
             label: "寵物知識",
-            url: "#",
+            url: "/knowledge",
         },
     ],
     [
@@ -32,13 +32,18 @@ const navContent = [
     [
         {
             type: "link",
+            label: "寵物測驗",
+            url: "/test",
+        },
+        {
+            type: "link",
             label: "SHOP",
-            url: "#",
+            url: "/shop",
         },
         {
             type: "link",
             label: "LOGIN",
-            url: "#",
+            url: "/login",
         },
     ],
 ];
@@ -56,20 +61,15 @@ const handleClick = (showLogin) => {
         <div class="nav-content">
             <ul v-for="(item, index) in navContent" class="nav-item-group">
                 <li v-for="item in item" :key="item.index" class="nav-item">
-                    <RouterLink
+                    <a
                         v-if="item.label == 'LOGIN'"
-                        :to="item.url"
+                        href="javascript:viod(0);"
                         @click="handleClick(showLogin)"
                     >
-                        <img
-                            v-if="item.type == 'img'"
-                            :src="item.label"
-                            class="nav-item-img"
-                        />
-                        <span v-else>
+                        <span>
                             {{ item.label }}
                         </span>
-                    </RouterLink>
+                    </a>
                     <RouterLink v-else :to="item.url">
                         <img
                             v-if="item.type == 'img'"
@@ -125,6 +125,12 @@ const handleClick = (showLogin) => {
     &:hover {
         scale: 0.95;
     }
+}
+
+.router-link-active {
+    color: red !important;
+    /* scale: 1.25; */
+    transition: all 0.25s ease-in-out;
 }
 
 .nav-item-img {
