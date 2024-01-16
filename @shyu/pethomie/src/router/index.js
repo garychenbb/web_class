@@ -1,10 +1,10 @@
 //  前端路由，用來做SPA的切換頁面
 
 import { createRouter, createWebHistory } from "vue-router";
-import TestView from "../stories/page/TestView.vue";
-import HomeView from "../stories/page/HomeView.vue";
-import CatView from "../stories/page/CatView.vue";
-import DogView from "../stories/page/DogView.vue";
+import TestView from "../page/TestView.vue";
+import HomeView from "../page/HomeView.vue";
+import CatView from "../page/CatView.vue";
+import DogView from "../page/DogView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),

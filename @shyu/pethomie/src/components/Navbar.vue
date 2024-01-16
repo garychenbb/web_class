@@ -25,7 +25,7 @@ const navContent = [
     [
         {
             type: "img",
-            label: "/src/stories/assets/logo.png",
+            label: "/src/assets/logo.png",
             url: "/",
         },
     ],
@@ -93,6 +93,7 @@ const handleClick = (showLogin) => {
     display: flex;
     position: sticky;
     top: 0;
+    z-index: 1001;
     /* font-family: "MaokenAssortedSans"; */
 }
 .nav-content {

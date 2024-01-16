@@ -6,7 +6,10 @@ import router from "./router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 
-import "./stories/assets/main.css";
+import "./assets/main.css";
+
+// mock data
+import "./api/mock";
 
 const app = createApp(App);
 

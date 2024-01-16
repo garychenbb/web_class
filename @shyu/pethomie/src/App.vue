@@ -2,8 +2,10 @@
 import { ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 
-import Navbar from "../src/stories/components/Navbar.vue";
-import Login from "../src/stories/components/Login.vue";
+import Navbar from "../src/components/Navbar.vue";
+import Login from "../src/components/Login.vue";
+
+// mock api
 
 const showLogin = ref(false);
 
