@@ -3,10 +3,7 @@ import Carousel from "../components/Carousel.vue";
 </script>
 
 <template>
-    <div class="Wrapper">
-        這頁跟貓咪有關
-        <!-- <Carousel></Carousel> -->
-    </div>
+    <div class="Wrapper">這頁跟狗狗有關</div>
     <!-- routerView -->
 </template>
 

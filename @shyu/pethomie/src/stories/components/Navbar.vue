@@ -91,6 +91,8 @@ const handleClick = (showLogin) => {
     background: #ece3d1;
     height: 4rem;
     display: flex;
+    position: sticky;
+    top: 0;
     /* font-family: "MaokenAssortedSans"; */
 }
 .nav-content {

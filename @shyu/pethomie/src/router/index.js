@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import TestView from "../stories/page/TestView.vue";
 import HomeView from "../stories/page/HomeView.vue";
 import CatView from "../stories/page/CatView.vue";
+import DogView from "../stories/page/DogView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,14 +13,24 @@ const router = createRouter({
             path: "/",
             name: "home",
             component: HomeView,
-            children: [
-                {
-                    // child (第2層)
-                    path: "/cat",
-                    name: "cat",
-                    component: CatView,
-                },
-            ],
+            // children: [
+            //     {
+            //         // child (第2層)
+            //         path: "/cat",
+            //         name: "cat",
+            //         component: CatView,
+            //     },
+            // ],
+        },
+        {
+            path: "/cat",
+            name: "cat",
+            component: CatView,
+        },
+        {
+            path: "/dog",
+            name: "dog",
+            component: DogView,
         },
         {
             path: "/test",
