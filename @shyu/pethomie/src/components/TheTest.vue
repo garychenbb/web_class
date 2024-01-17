@@ -7,21 +7,31 @@
 // });
 
 import axios from "axios";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 
 const getTestData = async () => {
     await axios.get("/test/getData").then((response) => {
-        console.log(response.data);
+        const data = response.data;
+
+        data.forEach((ele) => {
+            TestList.value.push(ele);
+        });
     });
 };
+const TestList = ref([]);
 
 onMounted(() => {
     getTestData();
+    console.log(TestList);
 });
 </script>
 
 <template>
     <div class="notebook">
+        <div v-for="question in TestList">
+            {{ question.question }}
+        </div>
+
         <div class="backdrop">
             <picture>
                 <source

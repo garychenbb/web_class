@@ -23,6 +23,27 @@ export default {
                     },
                 ],
             },
+            {
+                listId: 1,
+                question: "Q2",
+                option: [
+                    {
+                        index: 0,
+                        answer: "answer A",
+                        score: 1,
+                    },
+                    {
+                        index: 0,
+                        answer: "answer B",
+                        score: 2,
+                    },
+                    {
+                        index: 0,
+                        answer: "answer C",
+                        score: 3,
+                    },
+                ],
+            },
         ];
     },
 };
